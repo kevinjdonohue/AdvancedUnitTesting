@@ -1,0 +1,4 @@
+c:\users\kevin\documents\visual studio 2015\Projects\BuilderPatternExample\BuilderPatternExample\bin\Debug\BuilderPatternExample.dll
+c:\users\kevin\documents\visual studio 2015\Projects\BuilderPatternExample\BuilderPatternExample\bin\Debug\BuilderPatternExample.pdb
+c:\users\kevin\documents\visual studio 2015\Projects\BuilderPatternExample\BuilderPatternExample\obj\Debug\BuilderPatternExample.dll
+c:\users\kevin\documents\visual studio 2015\Projects\BuilderPatternExample\BuilderPatternExample\obj\Debug\BuilderPatternExample.pdb
