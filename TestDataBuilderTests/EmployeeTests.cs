@@ -50,5 +50,24 @@ namespace TestDataBuilderTests
             //assert
             actualAge.Should().Be(42);
         }
+
+        [Fact]
+        public void GetAddress_ShouldReturnCorrectValue()
+        {
+            //arrange
+            Address employeeAddress = new AddressBuilder().WithCity("Burien").WithState("Washington").WithZipCode(98166).WithLine1("16429 11th Ave SW").WithLine2("");
+            Employee employee = new EmployeeBuilder().WithAddress(employeeAddress);
+
+            //act
+            Address actualAddress = employee.getAddress();
+
+            //assert
+            actualAddress.Should().NotBeNull();
+            actualAddress.Line1.Should().Be("16429 11th Ave SW");
+            actualAddress.Line2.Should().Be("");
+            actualAddress.City.Should().Be("Burien");
+            actualAddress.State.Should().Be("Washington");
+            actualAddress.ZipCode.Should().Be(98166);
+        }
     }
 }

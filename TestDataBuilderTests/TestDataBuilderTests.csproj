@@ -8,8 +8,8 @@
     <ProjectGuid>{079CCE3B-3A46-4596-975F-09165E314814}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BuilderPatternExampleTests</RootNamespace>
-    <AssemblyName>BuilderPatternExampleTests</AssemblyName>
+    <RootNamespace>TestDataBuilderTests</RootNamespace>
+    <AssemblyName>TestDataBuilderTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -41,6 +41,10 @@
       <HintPath>..\packages\FluentAssertions.4.2.2\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -69,7 +73,11 @@
   <ItemGroup>
     <Compile Include="AddressBuilder.cs" />
     <Compile Include="EmployeeBuilder.cs" />
+    <Compile Include="EmployeeServiceBuilder.cs" />
+    <Compile Include="EmployeeServiceFixture.cs" />
+    <Compile Include="EmployeeServiceTests.cs" />
     <Compile Include="EmployeeTests.cs" />
+    <Compile Include="MockEnvy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

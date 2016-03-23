@@ -10,6 +10,16 @@ namespace TestDataBuilder
         private readonly DateTime _birthDate;
         private readonly Address _address;
 
+        public string FirstName
+        {
+            get { return _firstName; }
+        }
+
+        public string LastName
+        {
+            get { return _lastName; }
+        }
+
         public Employee(int id, string firstName, string lastName, DateTime birthDate, Address address)
         {
             _id = id;
@@ -35,6 +45,11 @@ namespace TestDataBuilder
 
             return age;
             //return (_birthDate > today.AddYears(-age)) ? age-- : age;
+        }
+
+        public Address getAddress()
+        {
+            return _address;
         }
     }
 }
