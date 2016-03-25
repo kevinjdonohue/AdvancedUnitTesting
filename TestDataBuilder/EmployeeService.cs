@@ -5,7 +5,7 @@ namespace TestDataBuilder
     public class EmployeeService
     {
         private ILogger _logger;
-        private IEmployeeRepository _employeeRepository;
+        private readonly IEmployeeRepository _employeeRepository;
 
         public EmployeeService(ILogger logger, IEmployeeRepository employeeRepository)
         {

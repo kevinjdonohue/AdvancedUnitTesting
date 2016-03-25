@@ -5,49 +5,40 @@ namespace TestDataBuilder
     public class Employee
     {
         private readonly int _id;
-        private readonly string _firstName;
-        private readonly string _lastName;
         private readonly DateTime _birthDate;
         private readonly Address _address;
 
-        public string FirstName
-        {
-            get { return _firstName; }
-        }
+        public string FirstName { get; }
 
-        public string LastName
-        {
-            get { return _lastName; }
-        }
+        public string LastName { get; }
 
         public Employee(int id, string firstName, string lastName, DateTime birthDate, Address address)
         {
             _id = id;
-            _firstName = firstName;
-            _lastName = lastName;
+            FirstName = firstName;
+            LastName = lastName;
             _birthDate = birthDate;
             _address = address;
         }
 
-        public string getFullName()
+        public string GetFullName()
         {
-            return string.Format("{0} {1}", this._firstName, this._lastName);
+            return string.Format("{0} {1}", FirstName, LastName);
         }
 
-        public int getAge()
+        public int GetAge()
         {
             DateTime today = DateTime.Today;
-            int age = (today.Year - _birthDate.Year);
+            int age = today.Year - _birthDate.Year;
             if (_birthDate > today.AddYears(-age))
             {
                 age--;
             }
 
             return age;
-            //return (_birthDate > today.AddYears(-age)) ? age-- : age;
         }
 
-        public Address getAddress()
+        public Address GetAddress()
         {
             return _address;
         }

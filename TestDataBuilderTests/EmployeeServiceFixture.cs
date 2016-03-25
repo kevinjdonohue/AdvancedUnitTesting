@@ -5,8 +5,8 @@ namespace TestDataBuilderTests
 {
     public class EmployeeServiceFixture
     {
-        private ILogger _logger;
-        private IEmployeeRepository _employeeRepository;
+        private readonly ILogger _logger;
+        private readonly IEmployeeRepository _employeeRepository;
 
         public IEmployeeRepository EmployeeRepository { get { return _employeeRepository; } }
 

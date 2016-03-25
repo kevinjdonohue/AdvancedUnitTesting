@@ -32,7 +32,7 @@ namespace TestDataBuilderTests
             Employee employee = new EmployeeBuilder().WithFirstName("Kevin").WithLastName("Donohue");
 
             //act
-            string actualFullName = employee.getFullName();
+            string actualFullName = employee.GetFullName();
 
             //assert
             actualFullName.Should().Be("Kevin Donohue");
@@ -45,7 +45,7 @@ namespace TestDataBuilderTests
             Employee employee = new EmployeeBuilder().WithBirthDate(new DateTime(1973, 8, 19));
 
             //act
-            int actualAge = employee.getAge();
+            int actualAge = employee.GetAge();
 
             //assert
             actualAge.Should().Be(42);
@@ -59,7 +59,7 @@ namespace TestDataBuilderTests
             Employee employee = new EmployeeBuilder().WithAddress(employeeAddress);
 
             //act
-            Address actualAddress = employee.getAddress();
+            Address actualAddress = employee.GetAddress();
 
             //assert
             actualAddress.Should().NotBeNull();
