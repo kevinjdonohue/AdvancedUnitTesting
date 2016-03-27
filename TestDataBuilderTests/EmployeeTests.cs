@@ -69,5 +69,21 @@ namespace TestDataBuilderTests
             actualAddress.State.Should().Be("Washington");
             actualAddress.ZipCode.Should().Be(98166);
         }
+
+        [Fact]
+        public void GetAddress_AddressesShouldBeEqual()
+        {
+            //arrange
+            Address expectedAddress = new AddressBuilder().WithCity("Burien").WithState("Washington").WithZipCode(98166).WithLine1("16429 11th Ave SW").WithLine2("");
+            Address employeeAddress = new AddressBuilder().WithCity("Burien").WithState("Washington").WithZipCode(98166).WithLine1("16429 11th Ave SW").WithLine2("");
+            Employee employee = new EmployeeBuilder().WithAddress(employeeAddress);
+
+            //act
+            Address actualAddress = employee.GetAddress();
+
+            //assert
+            actualAddress.ShouldBeEquivalentTo(expectedAddress);  //object graph comparison - equally named properties with the same value
+            //actualAddress.Should().Be(expectedAddress);
+        }
     }
 }
