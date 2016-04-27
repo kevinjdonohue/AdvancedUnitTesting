@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressBuilder.cs" />
+    <Compile Include="AddressTests.cs" />
     <Compile Include="EmployeeBuilder.cs" />
     <Compile Include="EmployeeServiceBuilder.cs" />
     <Compile Include="EmployeeServiceFixture.cs" />

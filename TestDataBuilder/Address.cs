@@ -16,5 +16,21 @@
             State = state;
             ZipCode = zipCode;
         }
+
+        public override bool Equals(object obj)
+        {
+            Address address = obj as Address;
+
+            if (address != null)
+            {
+                return this.City == address.City
+                    && this.Line1 == address.Line1
+                    && this.Line2 == address.Line2
+                    && this.State == address.State
+                    && this.ZipCode == address.ZipCode;
+            }
+
+            return base.Equals(obj);
+        }
     }
 }

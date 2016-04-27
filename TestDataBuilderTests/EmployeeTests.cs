@@ -58,10 +58,50 @@ namespace TestDataBuilderTests
             Employee employee = new EmployeeBuilder().WithAddress(employeeAddress);
 
             //act
-            Address actualAddress = employee.GetAddress();
+            Address actualAddress = employee.Address;
 
             //assert
             actualAddress.ShouldBeEquivalentTo(expectedAddress);  //object graph comparison - equally named properties with the same value
+        }
+
+        [Fact]
+        public void EqualsReturnsCorrectResult()
+        {
+            //arrange
+            Employee sut = new Employee(1, "Kevin", "Donohue", new DateTime(1973, 9, 19), new Address("line 1", "line 2", "city", "state", 12345));
+
+            //act
+            bool actual = sut.Equals(new Employee(1, "Kevin", "Donohue", new DateTime(1973, 9, 19), new Address("line 1", "line 2", "city", "state", 12345)));
+
+            //assert
+            actual.Should().Be(true);
+        }
+
+        [Fact]
+        public void EqualsAnyOtherObjectReturnsFalse()
+        {
+            //arrange
+            Employee sut = new Employee(1, "Kevin", "Donohue", new DateTime(1973, 9, 19), new Address("line 1", "line 2", "city", "state", 12345));
+            object someObject = "foo";
+
+            //act
+            bool actual = sut.Equals(someObject);
+
+            //assert
+            actual.Should().Be(false);
+        }
+
+        [Fact]
+        public void EmployeesShouldBeEqual()
+        {
+            //arrange
+            Employee expected = new Employee(1, "Kevin", "Donohue", new DateTime(1973, 9, 19), new Address("line 1", "line 2", "city", "state", 12345));
+
+            //act
+            Employee actual = new Employee(1, "Kevin", "Donohue", new DateTime(1973, 9, 19), new Address("line 1", "line 2", "city", "state", 12345));
+
+            //assert
+            actual.ShouldBeEquivalentTo(expected);
         }
     }
 }
